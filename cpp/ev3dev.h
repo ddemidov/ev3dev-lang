@@ -1318,8 +1318,8 @@ public:
 #ifdef EV3DEV_PLATFORM_BRICKPI
 //~autogen leds-declare platforms.brickpi.led>currentClass
 
-    static led blue_one;
-    static led blue_two;
+    static led brickpi1_blue;
+    static led brickpi2_blue;
 
     static std::vector<led*> one;
     static std::vector<led*> two;
@@ -1330,10 +1330,10 @@ public:
 #else
 //~autogen leds-declare platforms.ev3.led>currentClass
 
-    static led red_left;
-    static led red_right;
-    static led green_left;
-    static led green_right;
+    static led ev3_left_red;
+    static led ev3_left_green;
+    static led ev3_right_red;
+    static led ev3_right_green;
 
     static std::vector<led*> left;
     static std::vector<led*> right;

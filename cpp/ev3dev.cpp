@@ -879,19 +879,19 @@ void led::flash(unsigned on_ms, unsigned off_ms)
 #ifdef EV3DEV_PLATFORM_BRICKPI
 //~autogen leds-define platforms.brickpi.led>currentClass
 
-led led::blue_one{"brickpi1:blue:ev3dev"};
-led led::blue_two{"brickpi2:blue:ev3dev"};
+led led::brickpi1_blue{"brickpi1:blue:ev3dev"};
+led led::brickpi2_blue{"brickpi2:blue:ev3dev"};
 
-std::vector<led*> led::one{ &led::blue_one };
-std::vector<led*> led::two{ &led::blue_two };
+std::vector<led*> led::one{ &led::brickpi1_blue };
+std::vector<led*> led::two{ &led::brickpi2_blue };
 
 std::vector<float> led::blue{ static_cast<float>(1) };
 
 //-----------------------------------------------------------------------------
 void led::all_off() {
 
-    blue_one.off();
-    blue_two.off();
+    brickpi1_blue.off();
+    brickpi2_blue.off();
 
 }
 
@@ -899,13 +899,13 @@ void led::all_off() {
 #else
 //~autogen leds-define platforms.ev3.led>currentClass
 
-led led::red_left{"ev3:left:red:ev3dev"};
-led led::red_right{"ev3:right:red:ev3dev"};
-led led::green_left{"ev3:left:green:ev3dev"};
-led led::green_right{"ev3:right:green:ev3dev"};
+led led::ev3_left_red{"ev3:left:red:ev3dev"};
+led led::ev3_left_green{"ev3:left:green:ev3dev"};
+led led::ev3_right_red{"ev3:right:red:ev3dev"};
+led led::ev3_right_green{"ev3:right:green:ev3dev"};
 
-std::vector<led*> led::left{ &led::red_left, &led::green_left };
-std::vector<led*> led::right{ &led::red_right, &led::green_right };
+std::vector<led*> led::left{ &led::ev3_left_red, &led::ev3_left_green };
+std::vector<led*> led::right{ &led::ev3_right_red, &led::ev3_right_green };
 
 std::vector<float> led::red{ static_cast<float>(1), static_cast<float>(0) };
 std::vector<float> led::green{ static_cast<float>(0), static_cast<float>(1) };
@@ -916,10 +916,10 @@ std::vector<float> led::yellow{ static_cast<float>(0.5), static_cast<float>(1) }
 //-----------------------------------------------------------------------------
 void led::all_off() {
 
-    red_left.off();
-    red_right.off();
-    green_left.off();
-    green_right.off();
+    ev3_left_red.off();
+    ev3_left_green.off();
+    ev3_right_red.off();
+    ev3_right_green.off();
 
 }
 
